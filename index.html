@@ -1,173 +1,88 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#071119">
-<meta name="description" content="The Fiven Or Community — estudio independiente de videojuegos. Conoce nuestro RPG sandbox 2D de exploración y mundos procedurales, actualmente en desarrollo.">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="The Fiven Or Community">
-<meta property="og:title" content="The Fiven Or Community | Mundos por descubrir">
-<meta property="og:description" content="Un RPG sandbox en desarrollo. Mundos procedurales, exploración y libertad de creación.">
-<meta property="og:url" content="https://thefivenorcommunity.tech/">
-<meta property="og:image" content="https://thefivenorcommunity.tech/assets/forest-gameplay.png">
-<link rel="canonical" href="https://thefivenorcommunity.tech/">
-<title>The Fiven Or Community — Estudio de videojuegos</title>
-<style>
-:root{color-scheme:dark;--bg:#071119;--deep:#050c13;--panel:#0c1c25;--panel2:#0e202b;--ink:#f3fafb;--muted:#a3b6bd;--line:#29404a;--aqua:#71e5d0;--aqua-d:#1f827d;--gold:#e4c38b;--max:1160px}
-*,*:before,*:after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;overflow-x:hidden}
-body:before{content:"";position:absolute;inset:0 0 auto;height:750px;pointer-events:none;background:radial-gradient(ellipse at 75% 18%,#1b535041,transparent 43%),radial-gradient(ellipse at 12% 0%,#29445c50,transparent 51%);z-index:-1}
-a{color:inherit;text-decoration:none}
-a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
-img{display:block;width:100%}
-button{font:inherit;cursor:pointer}
-.wrap{max-width:var(--max);padding:0 28px;margin:auto}
-.site-header{position:sticky;top:0;z-index:10;background:#071119ec;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff14}
-.topbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.brand{display:inline-flex;align-items:center;gap:13px;flex-shrink:0}
-.brand-mark{height:40px;width:40px;display:grid;place-items:center;border:1px solid #70e4ce9b;background:linear-gradient(135deg,#122d32,#0a161e);border-radius:10px;color:var(--aqua);font-weight:900;font-size:21px;transform:rotate(-6deg)}
-.brand-mark b{transform:rotate(6deg)}
-.brand strong{font-size:13px;line-height:1.15;letter-spacing:.08em;max-width:155px}
-.nav{display:flex;align-items:center;gap:29px}
-.nav a{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);transition:color .2s}
-.nav a:hover{color:var(--aqua)}
-.header-actions{display:flex;gap:10px;align-items:center}
-.lang{border:1px solid var(--line);color:var(--ink);background:#101e26;border-radius:10px;min-width:45px;height:38px;font-size:12px;font-weight:800}
-.lang:hover{border-color:var(--aqua)}
-.kicker{display:flex;align-items:center;gap:11px;color:var(--aqua);text-transform:uppercase;letter-spacing:.2em;font-weight:800;font-size:11px}
-.kicker:before{content:"";width:21px;height:1px;background:currentColor}
-.hero{min-height:680px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.07fr);align-items:center;gap:56px;padding:100px 0 110px}
-.hero h1{font-size:clamp(44px,5.5vw,80px);line-height:1.05;letter-spacing:-.065em;margin:20px 0 23px;font-weight:840}
-.hero h1 span{color:var(--aqua)}
-.lead{font-size:clamp(16px,1.55vw,19px);color:#c0d0d5;max-width:540px;margin:0 0 31px}
-.cta-row{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
-.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 19px;border-radius:9px;border:1px solid var(--line);font-weight:800;font-size:13px;letter-spacing:.02em;transition:transform .2s,background .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--aqua);color:#062526;border-color:var(--aqua)}
-.btn-secondary{background:#101f28;color:var(--ink)}
-.micro{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px;margin-top:28px}
-.dot{height:7px;width:7px;border-radius:50%;background:#8be6c3;box-shadow:0 0 0 4px #71e5d012}
-.hero-visual{position:relative;padding:18px 0}
-.hero-visual:after{content:"";position:absolute;inset:3px -12px -13px 15px;border:1px solid #4f8a8a4f;border-radius:16px;z-index:-1;transform:rotate(2deg)}
-.screen{background:#0d1e28;padding:9px;border:1px solid #356472;border-radius:15px;box-shadow:0 32px 100px #0008;overflow:hidden}
-.screen img{aspect-ratio:16/10;object-fit:cover;object-position:center;border-radius:9px;image-rendering:auto}
-.screen figcaption{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 8px 4px;text-transform:uppercase;font-size:10px;letter-spacing:.12em;color:#acc6ca;font-weight:800}
-.screen figcaption span:last-child{color:var(--aqua)}
-.floating-tag{position:absolute;right:-12px;top:-18px;background:#132e32;color:var(--aqua);border:1px solid #74ead067;border-radius:9px;transform:rotate(4deg);padding:10px 14px;text-transform:uppercase;font-size:10px;letter-spacing:.14em;font-weight:900}
-.section{padding:90px 0;border-top:1px solid #ffffff12}
-.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;margin-bottom:32px}
-h2{font-size:clamp(31px,4vw,49px);line-height:1.14;letter-spacing:-.045em;margin:15px 0 0}
-.section-copy{max-width:465px;color:var(--muted);margin:0}
-.project-layout{display:grid;grid-template-columns:1.02fr .98fr;gap:38px;align-items:center}
-.project-copy h3{font-size:clamp(28px,3.1vw,41px);letter-spacing:-.04em;line-height:1.15;margin:13px 0 18px}
-.project-copy p{color:#b5c7cf;margin:0 0 16px}
-.tagline{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
-.tagline span{font-size:11px;border:1px solid #397075;color:#a6e9df;border-radius:100px;padding:5px 12px;letter-spacing:.045em}
-.panel-visual{border:1px solid var(--line);background:#0a1721;border-radius:13px;overflow:hidden}
-.panel-visual img{aspect-ratio:16/10;object-fit:cover}
-.panel-visual figcaption{display:flex;gap:8px;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;padding:14px 17px}
-.gallery{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:16px}
-.gallery figure{margin:0;min-width:0;overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:12px}
-.gallery img{aspect-ratio:1.35/1;object-fit:cover;transition:transform .4s}
-.gallery figure:first-child img{object-position:center}
-.gallery figure:hover img{transform:scale(1.04)}
-.gallery figcaption{padding:15px 16px 18px}
-.gallery strong{display:block;font-size:14px;letter-spacing:-.01em}
-.gallery small{display:block;color:var(--muted);font-size:12px;line-height:1.5;margin-top:5px}
-.disclaimer{color:#91a9b0;font-size:12px;margin:16px 0 0}
-.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
-.feature{border:1px solid var(--line);background:linear-gradient(140deg,#102732,#091820);padding:27px;border-radius:13px;min-height:245px}
-.feature .num{color:var(--aqua);font:800 12px ui-monospace,SFMono-Regular,Consolas,monospace}
-.feature h3{margin:23px 0 12px;font-size:20px;letter-spacing:-.035em;line-height:1.3}
-.feature p{color:var(--muted);font-size:14px;margin:0;line-height:1.75}
-.statement{border:1px solid #2f5c60;background:radial-gradient(ellipse at top right,#1b68604b,transparent 50%),#0b2028;padding:42px;border-radius:15px;display:grid;grid-template-columns:1fr .84fr;gap:40px;align-items:center}
-.statement p{color:#b3cbd0;margin:15px 0 0}
-.statement ul{list-style:none;padding:0;margin:0;display:grid;gap:16px}
-.statement li{display:flex;align-items:flex-start;gap:11px;color:#d4e2e5;font-size:14px}
-.statement li:before{content:"✦";color:var(--aqua);font-size:17px}
-.contact{padding:94px 0 110px}
-.contact-box{padding:48px;border:1px solid #386e6c;border-radius:16px;background:linear-gradient(120deg,#12313b,#0b1c25);display:flex;align-items:center;justify-content:space-between;gap:38px}
-.contact-box p{color:#b9cbd1;max-width:565px;margin:15px 0 0}
-.footer{border-top:1px solid #ffffff17;padding:24px 0 34px}
-.footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#91adb4;font-size:12px}
-.footer a{text-decoration:underline;text-underline-offset:4px}
-.skip{position:absolute;top:-100px;left:10px;padding:12px;background:var(--aqua);color:#062526;z-index:100}
-.skip:focus{top:10px}
-@media(max-width:930px){.hero{gap:32px;padding:85px 0 90px;min-height:auto}.nav{gap:17px}.project-layout{gap:22px}.gallery{grid-template-columns:1fr 1fr}.gallery figure:last-child{grid-column:1/-1}.gallery figure:last-child img{aspect-ratio:2.2/1}}
-@media(max-width:690px){.wrap{padding:0 20px}.topbar{min-height:68px}.brand strong{font-size:11px}.brand-mark{height:35px;width:35px}.nav{display:none}.hero{grid-template-columns:1fr;padding:65px 0 74px;gap:39px}.hero h1{font-size:clamp(42px,11vw,60px)}.hero-visual{padding:6px 0}.floating-tag{right:0;top:-14px}.section{padding:69px 0}.section-head{display:block}.section-copy{margin-top:20px}.project-layout{grid-template-columns:1fr;gap:26px}.gallery{grid-template-columns:1fr}.gallery figure:last-child{grid-column:auto}.gallery img,.gallery figure:last-child img{aspect-ratio:16/10}.features{grid-template-columns:1fr}.feature{min-height:unset}.statement{grid-template-columns:1fr;padding:27px;gap:25px}.contact{padding:65px 0 80px}.contact-box{display:block;padding:30px}.contact-box .btn{margin-top:22px}.footer .wrap{display:block}.footer .wrap span{display:block;margin:0 0 8px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b20">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="The Fiven Or Community is an independent game development initiative crafting an original 2D pixel-art procedural sandbox RPG. Discover real images from our work in progress.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Fiven Or Community — Independent Game Studio">
+  <meta property="og:description" content="A world taking shape. An original procedural sandbox RPG in development, with real gameplay imagery.">
+  <meta property="og:url" content="https://thefivenorcommunity.tech/">
+  <meta property="og:image" content="https://thefivenorcommunity.tech/assets/forest.webp">
+  <title>The Fiven Or Community — Independent Game Studio</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23101b20'/%3E%3Cpath d='M15 19h34L32 47z' fill='none' stroke='%23d1b58f' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="preload" as="image" href="assets/forest.webp" type="image/webp">
+  <style>
+    :root{color-scheme:dark;--ink:#101b20;--ink2:#152328;--ink3:#1b2c2f;--line:rgba(210,212,183,.17);--muted:#aab5b0;--paper:#f2efe3;--gold:#cfb38a;--moss:#879986;--mint:#a3bdb1}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);font-family:Inter,"Segoe UI",ui-sans-serif,system-ui,-apple-system,sans-serif;color:var(--paper);overflow-x:hidden;line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%;display:block}h1,h2,h3,p{margin-top:0}::selection{background:var(--gold);color:#121818}:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
+    .wrap{width:min(1232px,calc(100% - 76px));margin-inline:auto}.smallcaps{font-size:11px;font-weight:750;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+    .topbar{border-bottom:1px solid var(--line);background:#101a20}.nav{height:92px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;gap:12px;align-items:center;min-width:0}.emblem{width:45px;height:45px;flex:none;border:1px solid rgba(207,179,138,.55);display:grid;place-items:center;transform:rotate(45deg);border-radius:9px}.emblem span{display:block;transform:rotate(-45deg);color:var(--gold);font-weight:900;font-family:Georgia,serif;font-size:28px;line-height:1}.brand-name{font-weight:750;font-size:13px;letter-spacing:.06em;line-height:1.24;text-transform:uppercase}.brand-name small{display:block;color:var(--moss);font-size:9px;letter-spacing:.19em;margin-top:4px}.links{display:flex;align-items:center;gap:35px}.links>a{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:#c3cac2;transition:color .2s}.links>a:hover{color:var(--gold)}.language{border:1px solid rgba(207,179,138,.43);background:transparent;color:var(--paper);min-width:47px;min-height:39px;border-radius:3px;font-size:12px;cursor:pointer;font-weight:700}
+    .hero{padding:91px 0 95px;background:radial-gradient(circle at 75% 10%,rgba(89,117,111,.12),transparent 48%),var(--ink);position:relative}.hero-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:clamp(26px,6vw,84px)}.hero-copy{position:relative;z-index:1}.smallcaps.with-line{display:flex;align-items:center;gap:13px}.smallcaps.with-line:before{content:"";height:1px;width:34px;background:var(--gold)}h1{font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.054em;line-height:1.075;font-size:clamp(54px,5.9vw,90px);margin:21px 0 25px}h1 i{font-weight:400;color:var(--gold);font-style:italic}.intro{font-size:16px;color:#c3c7c1;line-height:1.82;max-width:500px}.actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:31px}.primary{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--gold);color:#132022;padding:14px 19px;min-height:49px;font-weight:720;font-size:13px;letter-spacing:.035em;border:1px solid var(--gold);transition:background .2s,transform .2s}.primary:hover{background:#ebd0a8;transform:translateY(-2px)}.textlink{font-size:13px;font-weight:650;border-bottom:1px solid var(--gold);padding-bottom:6px}.textlink:hover{color:var(--gold)}.hero-photo{position:relative;max-width:100%;padding:17px 17px 36px;border:1px solid rgba(207,179,138,.26);background:#14212a}.hero-photo:before{content:"";width:95px;height:95px;position:absolute;right:-9px;top:-9px;border-top:1px solid var(--gold);border-right:1px solid var(--gold)}.hero-photo img{aspect-ratio:925/560;object-fit:cover;width:100%;image-rendering:auto}.hero-caption{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:14px;color:#bdc8bb;font-size:10px;letter-spacing:.16em;text-transform:uppercase}.hero-caption b{color:var(--gold);font-weight:600}.hero-side{position:absolute;transform:rotate(-90deg);transform-origin:left top;bottom:6px;left:-29px;white-space:nowrap;color:#82918b;font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+    .statement{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;background:#17252a}.statement .wrap{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.statement span{font-size:11px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:#b7c5ba}.statement .dividerdot{width:4px;height:4px;background:var(--gold);transform:rotate(45deg)}
+    section{scroll-margin-top:30px}.section{padding:108px 0}.section-header{display:flex;justify-content:space-between;gap:48px;align-items:end;margin-bottom:43px}.section-header .copy{max-width:470px;margin-bottom:0}.section-title{font:400 clamp(38px,4.3vw,62px)/1.09 Georgia,serif;letter-spacing:-.045em;margin:14px 0 0}.copy{font-size:15px;line-height:1.85;color:#b9c4bc;max-width:655px}.kicker{margin-bottom:13px}.project-lead{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,7vw,106px);padding:0 0 95px}.project-lead .copy{margin-top:26px}.project-code{border-left:1px solid var(--line);padding-left:28px;display:grid;align-content:center;gap:24px}.project-code div{display:grid;gap:3px}.project-code small{font-size:10px;color:var(--gold);font-weight:750;letter-spacing:.18em;text-transform:uppercase}.project-code strong{font-weight:400;font-size:17px;color:#dde2d8}.status-tag{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(207,179,138,.28);padding:9px 12px;width:fit-content;font-size:11px;color:#d8d5c3}.status-tag:before{content:"";width:6px;height:6px;background:var(--gold);border-radius:50%}
+    .gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:22px}.shot{margin:0;position:relative;background:#1a272c;border:1px solid rgba(220,216,191,.14);overflow:hidden}.shot>img{aspect-ratio:16/10;width:100%;object-fit:cover;transition:transform .75s cubic-bezier(.17,.67,.2,1)}.shot:hover>img{transform:scale(1.025)}.shot figcaption{padding:17px 19px 20px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}.shot figcaption b{font-family:Georgia,serif;font-weight:400;font-size:23px}.shot figcaption span{font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold);text-align:right}.shot.big{grid-column:span 7}.shot.med{grid-column:span 5}.shot.third{grid-column:span 4}.shot.third figcaption b{font-size:21px}.disclosure{margin:23px 0 0;color:#8e9d95;font-size:11px;line-height:1.65;letter-spacing:.015em}
+    .process{background:linear-gradient(150deg,#182a2d,#101a20 60%);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.process-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(35px,9vw,115px)}.pillars{display:grid;gap:0}.pillar{padding:26px 0;border-top:1px solid rgba(220,216,191,.18);display:grid;grid-template-columns:44px 1fr;gap:16px}.pillar:last-child{border-bottom:1px solid rgba(220,216,191,.18)}.pillar .number{color:var(--gold);font-size:12px;letter-spacing:.08em}.pillar h3{font:400 25px/1.2 Georgia,serif;margin:0 0 8px}.pillar p{color:#afbab2;font-size:14px;line-height:1.78;margin-bottom:0}
+    .contact{padding:105px 0 115px;text-align:center}.contact h2{font:400 clamp(40px,6vw,74px)/1.12 Georgia,serif;letter-spacing:-.04em;margin:12px auto 19px;max-width:760px}.contact .copy{margin:0 auto 31px}.email-link{display:inline-block;border-bottom:1px solid var(--gold);color:var(--gold);font-size:clamp(15px,2.2vw,23px);overflow-wrap:anywhere;padding-bottom:8px}.footer{border-top:1px solid var(--line);padding:27px 0 40px}.footer-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap;font-size:11px;color:#9aa9a1}.footer-inner a:hover{color:var(--gold)}
+    [data-lang="es"]{display:none}body.es [data-lang="en"]{display:none}body.es [data-lang="es"]{display:revert}
+    @media(max-width:1000px){.hero-layout{grid-template-columns:1fr;gap:50px}.hero{padding:72px 0}.hero-copy{max-width:720px}.hero-photo{max-width:780px}.project-lead{gap:45px}.gallery{gap:15px}.shot.big{grid-column:span 7}.shot.med{grid-column:span 5}}
+    @media(max-width:700px){.wrap{width:min(100% - 38px,1232px)}.nav{height:73px}.brand-name{font-size:11px}.brand-name small{font-size:8px}.emblem{width:38px;height:38px}.links{gap:13px}.links>a{display:none}.hero{padding:54px 0 66px}h1{font-size:clamp(48px,12vw,68px)}.intro{font-size:15px}.hero-photo{padding:9px 9px 26px}.hero-caption{font-size:9px;padding-top:10px}.hero-side{display:none}.statement .wrap{gap:8px 14px}.statement span{font-size:9px}.section{padding:70px 0}.section-header{display:block;margin-bottom:27px}.section-header .copy{margin-top:23px}.project-lead{grid-template-columns:1fr;gap:22px;padding-bottom:52px}.project-code{grid-template-columns:1fr 1fr;gap:18px;padding-left:18px}.project-code div:last-child{grid-column:1/-1}.gallery{grid-template-columns:1fr;gap:21px}.shot.big,.shot.med,.shot.third{grid-column:auto}.shot figcaption b,.shot.third figcaption b{font-size:23px}.process-grid{grid-template-columns:1fr;gap:36px}.contact{padding:80px 0}.footer-inner{gap:8px}.contact h2{font-size:clamp(40px,9vw,60px)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shot>img,.primary{transition:none}}
+  </style>
 </head>
 <body>
-<a class="skip" href="#main" data-es="Saltar al contenido" data-en="Skip to content">Saltar al contenido</a>
-<header class="site-header"><div class="wrap topbar">
-<a class="brand" href="#inicio" aria-label="The Fiven Or Community"><span class="brand-mark"><b>F</b></span><strong>THE FIVEN OR<br>COMMUNITY</strong></a>
-<nav class="nav" aria-label="Navegación principal"><a href="#estudio" data-es="Estudio" data-en="Studio">Estudio</a><a href="#proyecto" data-es="Proyecto" data-en="Project">Proyecto</a><a href="#galeria" data-es="Galería" data-en="Gallery">Galería</a><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></nav>
-<div class="header-actions"><button id="language" class="lang" type="button" aria-label="Switch to English">EN</button></div>
-</div></header>
-<main id="main">
-<section class="wrap hero" id="inicio">
-<div>
-<div class="kicker" data-es="Estudio independiente de videojuegos" data-en="Independent game development studio">Estudio independiente de videojuegos</div>
-<h1><span data-es="Mundos por" data-en="Worlds worth">Mundos por</span><br><span style="color:var(--ink)" data-es="descubrir." data-en="exploring.">descubrir.</span><br><span data-es="Historias por crear." data-en="Stories worth creating.">Historias por crear.</span></h1>
-<p class="lead" data-es="En The Fiven Or Community exploramos cómo la tecnología y la imaginación pueden dar vida a mundos de juego abiertos, sorprendentes y llenos de posibilidades." data-en="At The Fiven Or Community, we explore how technology and imagination can bring open, surprising game worlds to life.">En The Fiven Or Community exploramos cómo la tecnología y la imaginación pueden dar vida a mundos de juego abiertos, sorprendentes y llenos de posibilidades.</p>
-<div class="cta-row"><a href="#proyecto" class="btn btn-primary" data-es="Conoce nuestro juego ↗" data-en="Explore our game ↗">Conoce nuestro juego ↗</a><a href="#galeria" class="btn btn-secondary" data-es="Capturas reales ↓" data-en="Real screenshots ↓">Capturas reales ↓</a></div>
-<div class="micro"><span class="dot"></span><span data-es="Proyecto independiente · Desarrollo en curso" data-en="Independent project · In development">Proyecto independiente · Desarrollo en curso</span></div>
-</div>
-<div class="hero-visual"><figure class="screen"><img src="assets/forest-gameplay.png" width="1600" height="900" alt="Captura real del prototipo: exploración de un bosque de árboles azules, morados y amarillos." fetchpriority="high"><figcaption><span data-es="Captura del juego · bosque" data-en="In-game capture · forest">Captura del juego · bosque</span><span data-es="Prototipo real" data-en="Real prototype">Prototipo real</span></figcaption></figure><div class="floating-tag" data-es="En desarrollo" data-en="In development">En desarrollo</div></div>
-</section>
-<section class="section" id="estudio"><div class="wrap">
-<div class="section-head"><div><div class="kicker" data-es="01 / Nuestro estudio" data-en="01 / Our studio">01 / Nuestro estudio</div><h2 data-es="Ideas grandes.<br>Un comienzo independiente." data-en="Big ideas.<br>An independent beginning.">Ideas grandes.<br>Un comienzo independiente.</h2></div><p class="section-copy" data-es="The Fiven Or Community es una iniciativa de desarrollo de videojuegos que combina experimentación técnica, diseño de sistemas y pasión por la exploración. Avanzamos mediante prototipos, pruebas y mejoras continuas." data-en="The Fiven Or Community is an independent game-development initiative combining technical experimentation, systems design and a passion for exploration. We move forward through prototypes, testing and iteration.">The Fiven Or Community es una iniciativa de desarrollo de videojuegos que combina experimentación técnica, diseño de sistemas y pasión por la exploración. Avanzamos mediante prototipos, pruebas y mejoras continuas.</p></div>
-</div></section>
-<section class="section" id="proyecto"><div class="wrap">
-<div class="section-head"><div><div class="kicker" data-es="02 / Nuestro proyecto principal" data-en="02 / Our main project">02 / Nuestro proyecto principal</div><h2 data-es="Un mundo en construcción." data-en="A world in the making.">Un mundo en construcción.</h2></div></div>
-<div class="project-layout">
-<div class="project-copy">
-<div class="tagline"><span data-es="RPG sandbox" data-en="Sandbox RPG">RPG sandbox</span><span data-es="Pixel art 2D" data-en="2D pixel art">Pixel art 2D</span><span data-es="Mundo procedural" data-en="Procedural world">Mundo procedural</span></div>
-<h3 data-es="Explorar, transformar y descubrir." data-en="Explore, shape and discover.">Explorar, transformar y descubrir.</h3>
-<p data-es="Estamos desarrollando un juego original que combina la libertad de un sandbox con sistemas de rol y un mundo generado a partir de semillas. Terrenos, cuevas, biomas y la interacción con el entorno son parte central de nuestra visión." data-en="We are developing an original game that combines sandbox freedom with RPG systems and a seed-generated world. Terrain, caves, biomes and environmental interaction are central to our vision.">Estamos desarrollando un juego original que combina la libertad de un sandbox con sistemas de rol y un mundo generado a partir de semillas. Terrenos, cuevas, biomas y la interacción con el entorno son parte central de nuestra visión.</p>
-<p data-es="Las imágenes muestran pruebas reales del prototipo, no una versión final ni una promesa de que todos los sistemas diseñados estén completos." data-en="The images show real prototype testing—not a final release or a claim that every planned system is complete.">Las imágenes muestran pruebas reales del prototipo, no una versión final ni una promesa de que todos los sistemas diseñados estén completos.</p>
-</div>
-<figure class="panel-visual"><img src="assets/mega-island-gameplay.png" loading="lazy" width="1600" height="900" alt="Captura real del RPG: terreno con vegetación y árboles en una megaisla."><figcaption><span data-es="Pruebas de terreno y exploración" data-en="Terrain and exploration testing">Pruebas de terreno y exploración</span><span>↗</span></figcaption></figure>
-</div></div></section>
-<section class="section" id="galeria"><div class="wrap">
-<div class="section-head"><div><div class="kicker" data-es="03 / Desde el prototipo" data-en="03 / From the prototype">03 / Desde el prototipo</div><h2 data-es="El juego, tal como existe hoy." data-en="The game, as it exists today.">El juego, tal como existe hoy.</h2></div><p class="section-copy" data-es="Sin imágenes generadas para anunciar funciones inexistentes: estas son capturas del desarrollo y las pruebas del juego." data-en="No generated promotional images depicting features that do not exist: these are genuine development and testing screenshots.">Sin imágenes generadas para anunciar funciones inexistentes: estas son capturas del desarrollo y las pruebas del juego.</p></div>
-<div class="gallery">
-<figure><img src="assets/forest-gameplay.png" loading="lazy" width="1600" height="900" alt="Bosque de colores del prototipo de RPG."><figcaption><strong data-es="Biomas y ambientes" data-en="Biomes and environments">Biomas y ambientes</strong><small data-es="Prueba visual del bosque." data-en="Visual forest test.">Prueba visual del bosque.</small></figcaption></figure>
-<figure><img src="assets/mega-island-gameplay.png" loading="lazy" width="1600" height="900" alt="Terreno procedural del prototipo."><figcaption><strong data-es="Generación de terrenos" data-en="Terrain generation">Generación de terrenos</strong><small data-es="Superficie y vegetación de una megaisla." data-en="Mega-island surface and vegetation.">Superficie y vegetación de una megaisla.</small></figcaption></figure>
-<figure><img src="assets/vertical-world-gameplay.png" loading="lazy" width="1728" height="891" alt="Captura del prototipo que muestra diferencias de altura y un árbol próximo al borde."><figcaption><strong data-es="Altura y exploración" data-en="Verticality and exploration">Altura y exploración</strong><small data-es="Prueba de movimiento y perspectiva elevada." data-en="Movement and elevated-view testing.">Prueba de movimiento y perspectiva elevada.</small></figcaption></figure>
-</div>
-<p class="disclaimer" data-es="Material de desarrollo. La apariencia y los sistemas del juego pueden cambiar." data-en="Work in progress. The game's visuals and systems may change.">Material de desarrollo. La apariencia y los sistemas del juego pueden cambiar.</p>
-</div></section>
-<section class="section" id="vision"><div class="wrap">
-<div class="section-head"><div><div class="kicker" data-es="04 / Dirección creativa" data-en="04 / Creative direction">04 / Dirección creativa</div><h2 data-es="La visión detrás del mundo." data-en="The vision behind the world.">La visión detrás del mundo.</h2></div></div>
-<div class="features">
-<article class="feature"><div class="num">01 / WORLDGEN</div><h3 data-es="Mundos con lógica propia" data-en="Worlds with their own logic">Mundos con lógica propia</h3><p data-es="Exploramos generación por semillas, biomas, geografía y sistemas que relacionan el paisaje con lo que sucede dentro de él." data-en="We explore seed-based generation, biomes, geography and systems that connect landscapes with what happens within them.">Exploramos generación por semillas, biomas, geografía y sistemas que relacionan el paisaje con lo que sucede dentro de él.</p></article>
-<article class="feature"><div class="num">02 / DISCOVERY</div><h3 data-es="Explorar en varias capas" data-en="Exploration across layers">Explorar en varias capas</h3><p data-es="Superficie, cuevas, subsuelo y variaciones de altura forman parte de nuestros objetivos de exploración y construcción." data-en="Surface, caves, underground areas and changes in elevation are part of our exploration and building goals.">Superficie, cuevas, subsuelo y variaciones de altura forman parte de nuestros objetivos de exploración y construcción.</p></article>
-<article class="feature"><div class="num">03 / SYSTEMS</div><h3 data-es="Libertad y sistemas emergentes" data-en="Freedom and emergent systems">Libertad y sistemas emergentes</h3><p data-es="Diseñamos mecánicas de interacción, progresión y transformación del entorno, validándolas poco a poco en el prototipo." data-en="We design interaction, progression and world-shaping mechanics, gradually validating them in the prototype.">Diseñamos mecánicas de interacción, progresión y transformación del entorno, validándolas poco a poco en el prototipo.</p></article>
-</div></div></section>
-<section class="section"><div class="wrap"><div class="statement">
-<div><div class="kicker" data-es="Cómo trabajamos" data-en="How we work">Cómo trabajamos</div><h2 data-es="Prototipar. Probar.<br>Mejorar." data-en="Prototype. Test.<br>Improve.">Prototipar. Probar.<br>Mejorar.</h2><p data-es="Preferimos mostrar el trabajo real: avances técnicos, experimentos visuales y sistemas que aún requieren pulido. Cada iteración nos acerca a un juego más coherente y disfrutable." data-en="We prefer showing real work: technical progress, visual experiments and systems that still need polish. Each iteration brings us closer to a more cohesive, enjoyable game.">Preferimos mostrar el trabajo real: avances técnicos, experimentos visuales y sistemas que aún requieren pulido. Cada iteración nos acerca a un juego más coherente y disfrutable.</p></div>
-<ul><li data-es="Diseño de mundos procedurales y pixel art 2D" data-en="Procedural world design and 2D pixel art">Diseño de mundos procedurales y pixel art 2D</li><li data-es="Validación de sistemas mediante pruebas reales" data-en="Systems validated through real testing">Validación de sistemas mediante pruebas reales</li><li data-es="Desarrollo continuo, sin fechas de lanzamiento inventadas" data-en="Ongoing development, no invented release dates">Desarrollo continuo, sin fechas de lanzamiento inventadas</li></ul>
-</div></div></section>
-<section class="contact" id="contacto"><div class="wrap"><div class="contact-box"><div><div class="kicker" data-es="05 / Contacto" data-en="05 / Contact">05 / Contacto</div><h2 data-es="Hablemos del futuro." data-en="Let's talk about what's next.">Hablemos del futuro.</h2><p data-es="¿Te interesa el estudio, nuestro proyecto o una posible colaboración? Puedes escribirnos directamente." data-en="Interested in the studio, our game or a possible collaboration? Get in touch.">¿Te interesa el estudio, nuestro proyecto o una posible colaboración? Puedes escribirnos directamente.</p></div><a class="btn btn-primary" href="mailto:contacto@thefivenorcommunity.tech" data-es="Escríbenos ↗" data-en="Email us ↗">Escríbenos ↗</a></div></div></section>
-</main>
-<footer class="footer"><div class="wrap"><span>© <span id="year">2026</span> The Fiven Or Community</span><span data-es="Estudio independiente · Proyecto en desarrollo" data-en="Independent studio · Work in progress">Estudio independiente · Proyecto en desarrollo</span><a href="mailto:contacto@thefivenorcommunity.tech">contacto@thefivenorcommunity.tech</a></div></footer>
-<script>
-document.getElementById("year").textContent=String(new Date().getFullYear());
-const toggle=document.getElementById("language");
-let locale="es";
-toggle.addEventListener("click",()=>{
-  locale=locale==="es"?"en":"es";
-  document.documentElement.lang=locale;
-  document.querySelectorAll("[data-es][data-en]").forEach(el=>{
-    const content=el.getAttribute("data-"+locale);
-    if(content.includes("<br>")){el.innerHTML=content.replace(/<br>/g,"<br>");}else{el.textContent=content;}
-  });
-  toggle.textContent=locale==="es"?"EN":"ES";
-  toggle.setAttribute("aria-label",locale==="es"?"Switch to English":"Cambiar a español");
-});
-</script>
-</body></html>
+  <header class="topbar"><div class="wrap nav">
+    <a class="brand" href="#top" aria-label="The Fiven Or Community — Home"><span class="emblem" aria-hidden="true"><span>F</span></span><span class="brand-name">The Fiven Or<br>Community<small>Independent game studio</small></span></a>
+    <nav class="links" aria-label="Main navigation">
+      <a href="#project"><span data-lang="en">The project</span><span data-lang="es">El proyecto</span></a>
+      <a href="#gallery"><span data-lang="en">World gallery</span><span data-lang="es">Galería</span></a>
+      <a href="#studio"><span data-lang="en">Studio</span><span data-lang="es">Estudio</span></a>
+      <a href="#contact"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a>
+      <button id="language" class="language" type="button" aria-label="Switch site language to Spanish">ES</button>
+    </nav>
+  </div></header>
+  <main id="top">
+    <section class="hero"><div class="wrap hero-layout">
+      <div class="hero-copy"><p class="smallcaps with-line" data-lang="en">Independent games · Worlds in progress</p><p class="smallcaps with-line" data-lang="es">Videojuegos independientes · Mundos en desarrollo</p>
+        <h1 data-lang="en">Worlds to<br><i>get lost in.</i></h1><h1 data-lang="es">Mundos para<br><i>perderse en ellos.</i></h1>
+        <p class="intro" data-lang="en">We're building an original 2D pixel-art sandbox RPG shaped by procedural worlds, free exploration, and an obsession with the details that make a place feel alive.</p>
+        <p class="intro" data-lang="es">Estamos creando un RPG sandbox original en pixel art 2D, con mundos procedurales, exploración libre y una obsesión por los detalles que hacen que un lugar cobre vida.</p>
+        <div class="actions"><a class="primary" href="#project"><span data-lang="en">Discover the project</span><span data-lang="es">Conoce el proyecto</span><span aria-hidden="true">↗</span></a><a class="textlink" href="#gallery"><span data-lang="en">See the world</span><span data-lang="es">Ver el mundo</span> ↗</a></div>
+      </div>
+      <div class="hero-photo"><span class="hero-side" aria-hidden="true">THE FIVEN OR COMMUNITY — ORIGINAL WORLDS</span><img src="assets/forest.webp" alt="Actual prototype screenshot showing the character among colorful, elevated pixel-art trees" width="925" height="560" fetchpriority="high"><div class="hero-caption"><span data-lang="en">Captured in-game · Prototype</span><span data-lang="es">Captura del juego · Prototipo</span><b>01 / 05</b></div></div>
+    </div></section>
+    <div class="statement"><div class="wrap"><span data-lang="en">An original world</span><span data-lang="es">Un mundo original</span><i class="dividerdot" aria-hidden="true"></i><span>2D Pixel Art</span><i class="dividerdot" aria-hidden="true"></i><span data-lang="en">Procedural generation</span><span data-lang="es">Generación procedural</span><i class="dividerdot" aria-hidden="true"></i><span data-lang="en">Work in progress</span><span data-lang="es">En desarrollo</span></div></div>
+    <section class="section" id="project"><div class="wrap"><div class="project-lead"><div><p class="smallcaps kicker"><span data-lang="en">001 — The project</span><span data-lang="es">001 — El proyecto</span></p><h2 class="section-title" data-lang="en">A world with a thousand paths.</h2><h2 class="section-title" data-lang="es">Un mundo con mil caminos.</h2><p class="copy" data-lang="en">Our in-development title is an open-world 2D RPG sandbox. The creative goal is a coherent landscape where geography, biomes, caves, resources, and future gameplay systems influence the journey. The screenshots below come from real development builds, not concept renders.</p><p class="copy" data-lang="es">Nuestro juego en desarrollo es un RPG sandbox 2D de mundo abierto. Buscamos un paisaje coherente donde geografía, biomas, cuevas, recursos y futuros sistemas de juego influyan en cada aventura. Las imágenes de abajo provienen de compilaciones reales, no de ilustraciones conceptuales.</p></div>
+          <aside class="project-code"><div><small data-lang="en">Project identity</small><small data-lang="es">Identidad del proyecto</small><strong data-lang="en">Title not yet announced</strong><strong data-lang="es">Título aún no anunciado</strong></div><div><small data-lang="en">Genre</small><small data-lang="es">Género</small><strong>2D Sandbox RPG / Pixel Art</strong></div><div><small data-lang="en">Current phase</small><small data-lang="es">Fase actual</small><span class="status-tag" data-lang="en">Active prototype · Under development</span><span class="status-tag" data-lang="es">Prototipo activo · En desarrollo</span></div></aside>
+        </div>
+        <div id="gallery"><div class="section-header"><div><p class="smallcaps kicker" data-lang="en">002 — Inside the world</p><p class="smallcaps kicker" data-lang="es">002 — Dentro del mundo</p><h2 class="section-title" data-lang="en">Places taking shape.</h2><h2 class="section-title" data-lang="es">Lugares que toman forma.</h2></div><p class="copy" data-lang="en">A first look at actual environments from our working prototype. We frame the landscape, not the interface.</p><p class="copy" data-lang="es">Un primer vistazo a escenarios auténticos de nuestro prototipo. Aquí el protagonista es el paisaje, no la interfaz.</p></div>
+          <div class="gallery">
+            <figure class="shot big"><img loading="lazy" decoding="async" src="assets/heights.webp" alt="Actual game screenshot: trees and coast seen from a high vantage point" width="1060" height="595"><figcaption><b data-lang="en">Beyond the horizon</b><b data-lang="es">Más allá del horizonte</b><span data-lang="en">Exploration / Heights</span><span data-lang="es">Exploración / Alturas</span></figcaption></figure>
+            <figure class="shot med"><img loading="lazy" decoding="async" src="assets/island.webp" alt="Actual game screenshot: procedural terrain and stylized green trees" width="925" height="555"><figcaption><b data-lang="en">Islands & terrain</b><b data-lang="es">Islas y terreno</b><span data-lang="en">World generation</span><span data-lang="es">Generación</span></figcaption></figure>
+            <figure class="shot third"><img loading="lazy" decoding="async" src="assets/caves.webp" alt="Actual prototype screenshot with rough cavern terrain and trees" width="920" height="555"><figcaption><b data-lang="en">Below the surface</b><b data-lang="es">Bajo la superficie</b><span data-lang="en">Cave systems</span><span data-lang="es">Cuevas</span></figcaption></figure>
+            <figure class="shot third"><img loading="lazy" decoding="async" src="assets/shore.webp" alt="Actual game screenshot of rugged shoreline and a small pixel-art player" width="930" height="545"><figcaption><b data-lang="en">Changing landscapes</b><b data-lang="es">Paisajes cambiantes</b><span data-lang="en">Shoreline</span><span data-lang="es">Costa</span></figcaption></figure>
+            <figure class="shot third"><img loading="lazy" decoding="async" src="assets/forest.webp" alt="Actual game screenshot of vivid forest trees and player" width="925" height="560"><figcaption><b data-lang="en">A forest of color</b><b data-lang="es">Un bosque de color</b><span data-lang="en">Biomes</span><span data-lang="es">Biomas</span></figcaption></figure>
+          </div><p class="disclosure" data-lang="en">All game imagery shown here is captured from development builds and cropped to focus on the environment. Visuals and features may change during production; no release date has been announced.</p><p class="disclosure" data-lang="es">Todas las imágenes del juego son capturas de compilaciones en desarrollo, recortadas para destacar el entorno. Los gráficos y sistemas pueden cambiar; todavía no anunciamos una fecha de lanzamiento.</p>
+        </div></div></section>
+    <section class="section process" id="studio"><div class="wrap process-grid"><div><p class="smallcaps kicker" data-lang="en">003 — The studio</p><p class="smallcaps kicker" data-lang="es">003 — El estudio</p><h2 class="section-title" data-lang="en">Curiosity is our compass.</h2><h2 class="section-title" data-lang="es">La curiosidad es nuestra brújula.</h2><p class="copy" style="margin-top:27px" data-lang="en">The Fiven Or Community is an independent game-development initiative. We prototype, test, revisit and refine—building toward a world that rewards discovery rather than following a fixed route.</p><p class="copy" style="margin-top:27px" data-lang="es">The Fiven Or Community es una iniciativa independiente de desarrollo de videojuegos. Prototipamos, probamos y perfeccionamos para construir un mundo que recompense el descubrimiento sin imponer un único camino.</p></div>
+        <div class="pillars">
+          <div class="pillar"><span class="number">01</span><div><h3 data-lang="en">A living geography</h3><h3 data-lang="es">Una geografía con sentido</h3><p data-lang="en">Terrain, elevation, caves and biomes designed as pieces of a connected world—not isolated scenes.</p><p data-lang="es">Terreno, alturas, cuevas y biomas pensados como partes de un mundo conectado, no como escenarios aislados.</p></div></div>
+          <div class="pillar"><span class="number">02</span><div><h3 data-lang="en">Freedom to explore</h3><h3 data-lang="es">Libertad de explorar</h3><p data-lang="en">Our long-term vision puts discovery, interaction and player choice at the heart of the experience.</p><p data-lang="es">Nuestra visión a largo plazo sitúa el descubrimiento, la interacción y las decisiones del jugador en el centro.</p></div></div>
+          <div class="pillar"><span class="number">03</span><div><h3 data-lang="en">Built by iteration</h3><h3 data-lang="es">Creado mediante iteraciones</h3><p data-lang="en">Real builds, real tests, honest milestones. Features evolve through engineering and playtesting.</p><p data-lang="es">Compilaciones reales, pruebas reales y objetivos transparentes. Los sistemas evolucionan con ingeniería y pruebas de juego.</p></div></div>
+        </div></div></section>
+    <section class="contact" id="contact"><div class="wrap"><p class="smallcaps" data-lang="en">004 — Get in touch</p><p class="smallcaps" data-lang="es">004 — Contacto</p><h2 data-lang="en">Great worlds start with a conversation.</h2><h2 data-lang="es">Los grandes mundos comienzan con una conversación.</h2><p class="copy" data-lang="en">Partnerships, studio inquiries or ideas about what we're building? We'd love to hear from you.</p><p class="copy" data-lang="es">¿Colaboraciones, consultas profesionales o ideas sobre lo que estamos creando? Nos encantará escucharte.</p><a class="email-link" href="mailto:contacto@thefivenorcommunity.tech">contacto@thefivenorcommunity.tech ↗</a></div></section>
+  </main>
+  <footer class="footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> The Fiven Or Community.</span><span data-lang="en">Independent development · A work in progress</span><span data-lang="es">Desarrollo independiente · Un proyecto en evolución</span><a href="#top" data-lang="en">Back to top ↑</a><a href="#top" data-lang="es">Volver arriba ↑</a></div></footer>
+  <script>
+  (()=>{
+    const button=document.getElementById('language');
+    function setLanguage(lang){const spanish=lang==='es';document.body.classList.toggle('es',spanish);document.documentElement.lang=spanish?'es':'en';button.textContent=spanish?'EN':'ES';button.setAttribute('aria-label',spanish?'Cambiar el sitio al inglés':'Switch site language to Spanish')}
+    let preferred='en';try{preferred=localStorage.getItem('fivenor-language')||(navigator.language.toLowerCase().startsWith('es')?'es':'en')}catch(e){preferred=navigator.language.toLowerCase().startsWith('es')?'es':'en'}
+    setLanguage(preferred);
+    button.addEventListener('click',()=>{const next=document.body.classList.contains('es')?'en':'es';setLanguage(next);try{localStorage.setItem('fivenor-language',next)}catch(e){}});
+    document.getElementById('year').textContent=new Date().getFullYear();
+  })();
+  </script>
+</body>
+</html>
