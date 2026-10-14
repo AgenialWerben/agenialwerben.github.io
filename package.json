@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "astro dev --host 0.0.0.0",
-    "build": "astro build && node scripts/copy-assets.mjs",
+    "build": "astro build && node scripts/copy-assets.mjs && node scripts/finalize-csp.mjs",
     "check": "tsc --noEmit",
     "preview": "astro preview --host 0.0.0.0",
     "audit:site": "node scripts/security-check.mjs",

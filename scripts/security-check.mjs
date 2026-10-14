@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 
 const root = process.cwd();
 const load = (path) => readFileSync(join(root, path), 'utf8');
@@ -21,9 +22,15 @@ for (const [label, path] of pages) {
   const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
   assert.ok(scripts.length > 0, label + ': script missing');
   for (const [, attrs, body] of scripts) {
-    assert.match(attrs, /\bsrc\s*=\s*["'][^"']+["']/i, label + ': inline JS violates CSP');
-    assert.equal(body.trim(), '', label + ': non-empty inline JS violates CSP');
-    assert.doesNotMatch(attrs, /src\s*=\s*["']https?:\/\//i, label + ': external JS forbidden');
+    if (/\bsrc\s*=\s*["'][^"']+["']/i.test(attrs)) {
+      assert.equal(body.trim(), '', label + ': external JS tag unexpectedly has inline content');
+      assert.doesNotMatch(attrs, /src\s*=\s*["']https?:\/\//i, label + ': external JS forbidden');
+    } else {
+      assert.equal(label, 'Astro build', label + ': unexpected inline legacy script');
+      const hash = createHash('sha256').update(body, 'utf8').digest('base64');
+      assert.ok(policy.includes("'sha256-" + hash + "'"), label + ': inline build module must match a cryptographic CSP hash');
+      assert.doesNotMatch(body, /\b(?:eval\s*\(|document\.write\s*\(|\.innerHTML\s*=)/i, label + ': suspicious inline code');
+    }
   }
   assert.doesNotMatch(html, /<style\b/i, label + ': inline CSS forbidden');
   assert.doesNotMatch(html, /\sstyle\s*=/i, label + ': inline style attributes forbidden');
