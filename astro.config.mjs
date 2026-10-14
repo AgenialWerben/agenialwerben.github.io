@@ -1,2 +1,2 @@
 import { defineConfig } from 'astro/config';
-export default defineConfig({site:'https://thefivenorcommunity.tech',output:'static'});
+export default defineConfig({site:'https://thefivenorcommunity.tech',output:'static',build:{inlineStylesheets:'never'}});

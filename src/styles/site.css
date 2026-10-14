@@ -23,3 +23,8 @@
     @media(max-width:460px){.hero-mark{font-size:24.9vw}.ribbon-inner{gap:10px}.ribbon span{font-size:9px}.brief-row{grid-template-columns:94px 1fr}.system-card{min-height:265px}.system-card h3{font-size:18px}.system-card p{font-size:12px}.diagram-step strong{font-size:12px}.diagram-step p{font-size:10px}.shot-caption strong{font-size:19px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
   
+
+/* Removed per-element inline styles for strict CSP. */
+.spacing-top-22{margin-top:22px}
+.spacing-top-21{margin-top:21px}
+.footer-mark{font-size:25px;color:#f5f5f2}
