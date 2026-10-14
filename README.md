@@ -45,3 +45,14 @@ The `public/CNAME` file preserves the custom domain. Do not change email MX/SPF 
 Development claims derive from the game's documents and test reports in Drive. Planned features must not be advertised as complete, and no release date has been announced.
 
 © The Fiven Or Community.
+
+## Project explanation
+
+The homepage includes a complete, bilingual explanation sourced from the internal design master, dungeon/sky-world documents and QA status:
+
+- `ProjectExperience.astro`: accessible introduction, five-stage intended gameplay loop, three clearly hypothetical player paths and one-world sky/surface/underground structure.
+- `ProjectFAQ.astro`: native HTML `details` answers about 2D visuals, sandbox versus campaign, role freedom, creature/faction completeness, multiplayer, platforms and release status.
+- `project-explainer.css`: responsive editorial layout; no runtime dependency.
+- The legacy root `index.html` mirrors the content so either Pages publication source presents the same information.
+
+Do not confuse future design goals with features fully playable today. Do not publish the game's unannounced name.
