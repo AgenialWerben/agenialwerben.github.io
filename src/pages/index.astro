@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Brand from '../components/Brand.astro';
+---
+<BaseLayout>
+<main id="top">
+    <section class="hero">
+      <div class="shell">
+        <div class="hero-top">
+          <span class="eyebrow live"><span data-lang="es">Estudio independiente de videojuegos</span><span data-lang="en">Independent game development studio</span></span>
+          <span class="eyebrow muted">THE FIVEN OR COMMUNITY / EST. INDEPENDENT</span>
+        </div>
+        <div class="hero-mark notranslate" lang="en" translate="no" aria-label="TFOC">TFOC</div>
+        <div class="hero-bottom">
+          <div class="hero-copy">
+            <h1 data-lang="es">No seguimos mapas.<br><em>Los creamos.</em></h1>
+            <h1 data-lang="en">We don't follow maps.<br><em>We make them.</em></h1>
+            <p data-lang="es">Creamos experiencias donde cada territorio es una posibilidad. Mundos generados mediante sistemas, exploración libre y una ambición: que lo inesperado se sienta natural.</p>
+            <p data-lang="en">We create experiences where every landscape holds possibility. System-driven worlds, open exploration, and one ambition: making the unexpected feel natural.</p>
+            <div class="buttons">
+              <a class="btn btn-white" href="#vision"><span data-lang="es">Descubre el proyecto</span><span data-lang="en">Explore the project</span><span class="arrow" aria-hidden="true">↗</span></a>
+              <a class="btn btn-outline" href="#gallery"><span data-lang="es">Ver el prototipo</span><span data-lang="en">See the prototype</span><span class="arrow" aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="assets/forest.webp" alt="Captura real del prototipo: bosque de pixel art con árboles y personaje" width="925" height="560" fetchpriority="high">
+            <div class="visual-label"><span data-lang="es">Archivo visual / Captura del prototipo</span><span data-lang="en">Visual archive / Prototype capture</span><span>001 — WIP</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="ribbon"><div class="shell ribbon-inner">
+      <span data-lang="es">Mundos procedurales</span><span data-lang="en">Procedural worlds</span><span class="cross">✳</span>
+      <span>2D / PIXEL ART</span><span class="cross">✳</span>
+      <span data-lang="es">Exploración y simulación</span><span data-lang="en">Exploration & simulation</span><span class="cross">✳</span>
+      <span data-lang="es">Desarrollo activo</span><span data-lang="en">Active development</span>
+    </div></div>
+    <section class="section" id="vision">
+      <div class="shell">
+        <div class="section-top"><span class="eyebrow muted">01 / <span data-lang="es">La visión</span><span data-lang="en">The vision</span></span>
+          <h2 class="section-heading" data-lang="es">No es solo un escenario.<br><span class="outline">Es un sistema vivo.</span></h2>
+          <h2 class="section-heading" data-lang="en">More than a backdrop.<br><span class="outline">A living system.</span></h2>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p class="lead" data-lang="es">Estamos desarrollando un RPG sandbox 2D de fantasía y mundo abierto, con exploración, terreno modificable y sistemas interconectados que buscan dar sentido a cada decisión.</p>
+            <p class="lead" data-lang="en">We're developing an open-world 2D fantasy sandbox RPG built around exploration, editable terrain, and connected systems designed to make every decision meaningful.</p>
+            <p class="paragraph" data-lang="es">El mundo no se diseña habitación por habitación. Su geografía nace de reglas de terreno, clima, agua, geología y ecología. Sobre esa base investigamos la interacción con recursos, la fabricación de objetos, la progresión de oficios, las criaturas y las sociedades. No se trata de una campaña lineal: la idea es que el entorno se convierta en parte de la historia que crea cada jugador.</p>
+            <p class="paragraph" data-lang="en">The world isn't assembled room by room. Its geography emerges from terrain rules, climate, water, geology and ecology. That foundation supports our work on resources, crafting, role progression, creatures and societies. The goal isn't a fixed linear campaign: it's an environment that becomes part of the story each player creates.</p>
+          </div>
+          <aside class="brief" aria-label="Project information">
+            <div class="brief-row"><span class="eyebrow">01 / <span data-lang="es">Formato</span><span data-lang="en">Format</span></span><strong>Sandbox RPG · 2D · Pixel Art</strong></div>
+            <div class="brief-row"><span class="eyebrow">02 / <span data-lang="es">Mundo</span><span data-lang="en">World</span></span><strong data-lang="es">Abierto, procedural y explorable</strong><strong data-lang="en">Open, procedural and explorable</strong></div>
+            <div class="brief-row"><span class="eyebrow">03 / <span data-lang="es">Tecnología</span><span data-lang="en">Technology</span></span><strong>Defold · Lua · <span data-lang="es">Módulos nativos</span><span data-lang="en">Native modules</span></strong></div>
+            <div class="brief-row"><span class="eyebrow">04 / <span data-lang="es">Estado</span><span data-lang="en">Status</span></span><strong class="status" data-lang="es">Prototipo en desarrollo activo</strong><strong class="status" data-lang="en">Prototype in active development</strong></div>
+          </aside>
+        </div>
+        <div class="wide-photo">
+          <img src="assets/heights.webp" alt="Paisaje del prototipo con elevación, costa y árboles" loading="lazy" width="1060" height="595">
+          <div class="photo-stamp"><span data-lang="es">Del código al paisaje</span><span data-lang="en">From code to landscape</span> ↗</div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="world">
+      <div class="shell">
+        <div class="section-top"><span class="eyebrow muted">02 / <span data-lang="es">Cómo funciona</span><span data-lang="en">How it works</span></span>
+          <h2 class="section-heading" data-lang="es">Un mundo.<br><span class="outline">Miles de variables.</span></h2>
+          <h2 class="section-heading" data-lang="en">One world.<br><span class="outline">Thousands of variables.</span></h2>
+        </div>
+        <div class="section-split">
+          <div>
+            <p class="lead" data-lang="es">La generación no consiste en colocar elementos al azar. Cada sistema aporta información al siguiente.</p>
+            <p class="lead" data-lang="en">Generation isn't about placing random things. Each system informs the next.</p>
+            <p class="paragraph" style="margin-top:22px" data-lang="es">Una semilla y las reglas de generación producen el relieve. El clima, la cercanía del agua y la geología influyen en la distribución de biomas y recursos. El mundo se divide en regiones que se generan, preparan y muestran alrededor del jugador para no cargar todo el territorio a la vez. Cuando se modifica una zona, el sistema de persistencia está diseñado para conservar los cambios.</p>
+            <p class="paragraph" style="margin-top:22px" data-lang="en">A seed and generation rules shape the terrain. Climate, water proximity and geology influence biomes and resources. The world is split into chunks, generated and displayed near the player instead of loading everything at once. When an area changes, the persistence system is designed to preserve those edits.</p>
+          </div>
+          <div class="mechanics">
+            <div class="mechanic"><span class="num">01</span><div><h3 data-lang="es">Geografía que tiene lógica</h3><h3 data-lang="en">Geography with logic</h3><p data-lang="es">Relieve, alturas, costas, capas subterráneas y formaciones se construyen desde reglas compartidas. Las zonas no son postales desconectadas.</p><p data-lang="en">Relief, elevation, shores, underground layers and formations emerge from shared rules—not isolated postcards.</p></div><span class="plus">+</span></div>
+            <div class="mechanic"><span class="num">02</span><div><h3 data-lang="es">Biomas condicionados por el entorno</h3><h3 data-lang="en">Biomes shaped by the environment</h3><p data-lang="es">Temperatura, lluvia, humedad, agua y altitud ayudan a decidir si una región es bosque, desierto, pantano, tundra o terreno especial.</p><p data-lang="en">Temperature, rainfall, moisture, water and altitude help define forests, deserts, wetlands, tundra and special terrain.</p></div><span class="plus">+</span></div>
+            <div class="mechanic"><span class="num">03</span><div><h3 data-lang="es">Exploración por regiones</h3><h3 data-lang="en">Chunk-based exploration</h3><p data-lang="es">Los chunks se preparan por etapas y se intercambian a medida que el personaje se mueve; el rendimiento y la continuidad visual aún se están afinando.</p><p data-lang="en">Chunks are prepared in stages as the character moves; performance and visual continuity are still being refined.</p></div><span class="plus">+</span></div>
+            <div class="mechanic"><span class="num">04</span><div><h3 data-lang="es">Un mundo que recuerda</h3><h3 data-lang="en">A world that remembers</h3><p data-lang="es">El sistema de guardado contempla personaje, inventario, progreso, contenedores, modificaciones del terreno y estado del mundo. Sigue en validación integral.</p><p data-lang="en">The save system covers the player, inventory, progress, containers, terrain edits and world state. Full end-to-end validation continues.</p></div><span class="plus">+</span></div>
+          </div>
+        </div>
+        <div class="diagram" aria-label="Pipeline de generación del mundo">
+          <div class="diagram-step"><small>INPUT / 01</small><strong data-lang="es">Semilla</strong><strong data-lang="en">Seed</strong><p data-lang="es">Punto de partida reproducible</p><p data-lang="en">Repeatable starting point</p></div>
+          <div class="diagram-step"><small>WORLD / 02</small><strong data-lang="es">Relieve</strong><strong data-lang="en">Terrain</strong><p data-lang="es">Alturas y geología</p><p data-lang="en">Elevation & geology</p></div>
+          <div class="diagram-step"><small>CLIMATE / 03</small><strong data-lang="es">Clima</strong><strong data-lang="en">Climate</strong><p data-lang="es">Humedad y temperatura</p><p data-lang="en">Moisture & temperature</p></div>
+          <div class="diagram-step"><small>WATER / 04</small><strong data-lang="es">Agua</strong><strong data-lang="en">Water</strong><p data-lang="es">Ríos, lagos e influencia hídrica</p><p data-lang="en">Rivers, lakes & water influence</p></div>
+          <div class="diagram-step"><small>ECOLOGY / 05</small><strong data-lang="es">Biomas</strong><strong data-lang="en">Biomes</strong><p data-lang="es">Paisajes y recursos</p><p data-lang="en">Landscapes & resources</p></div>
+          <div class="diagram-step"><small>PLAY / 06</small><strong data-lang="es">Explorar</strong><strong data-lang="en">Explore</strong><p data-lang="es">Cargar, interactuar y guardar</p><p data-lang="en">Load, interact & save</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="possibilities">
+      <div class="shell">
+        <div class="section-top"><span class="eyebrow muted">03 / <span data-lang="es">Sistemas del juego</span><span data-lang="en">Game systems</span></span>
+          <h2 class="section-heading" data-lang="es">Explorar es<br><span class="outline">solo el principio.</span></h2>
+          <h2 class="section-heading" data-lang="en">Exploration is<br><span class="outline">only the beginning.</span></h2>
+        </div>
+        <p class="paragraph" data-lang="es">La arquitectura del proyecto va más allá del terreno. Estos son los pilares que se están prototipando o investigando; su presencia en código o diseño no significa que todos formen ya una experiencia jugable completa.</p>
+        <p class="paragraph" data-lang="en">The project architecture reaches beyond terrain. These are systems being prototyped or researched; code and design documents do not mean every feature already forms a complete playable experience.</p>
+        <div class="systems">
+          <article class="system-card"><span class="system-icon" aria-hidden="true">⌁</span><h3 data-lang="es">Excavar y transformar</h3><h3 data-lang="en">Dig and transform</h3><p data-lang="es">Terreno volumétrico, excavación y cambios que interactúan con el sistema de generación y guardado.</p><p data-lang="en">Volumetric terrain, excavation and edits linked to world generation and persistence.</p><small data-lang="es">Sistema técnico en prototipo</small><small data-lang="en">Technical system in prototype</small></article>
+          <article class="system-card"><span class="system-icon" aria-hidden="true">◈</span><h3 data-lang="es">Recursos y fabricación</h3><h3 data-lang="en">Resources and crafting</h3><p data-lang="es">Materiales, herramientas, herrería, calidad de fabricación y reparación con reglas de consumo concretas.</p><p data-lang="en">Materials, tools, smithing, crafting quality and repairs governed by resource rules.</p><small data-lang="es">Servicios en implementación</small><small data-lang="en">Systems under implementation</small></article>
+          <article class="system-card"><span class="system-icon" aria-hidden="true">✦</span><h3 data-lang="es">Combate y magia</h3><h3 data-lang="en">Combat and magic</h3><p data-lang="es">Atributos, resistencia, defensa, estados alterados, proyectiles y habilidades mágicas en desarrollo.</p><p data-lang="en">Attributes, stamina, defense, status effects, projectiles and magical abilities in development.</p><small data-lang="es">Mecánicas en desarrollo</small><small data-lang="en">Mechanics in development</small></article>
+          <article class="system-card"><span class="system-icon" aria-hidden="true">◎</span><h3 data-lang="es">Oficios y progresión</h3><h3 data-lang="en">Roles and progression</h3><p data-lang="es">Progresión por actividades y profesiones como herrero, agricultor, comerciante y líder.</p><p data-lang="en">Activity-based progression and roles such as blacksmith, farmer, merchant and leader.</p><small data-lang="es">Contratos de lógica en prototipo</small><small data-lang="en">Prototype logic contracts</small></article>
+          <article class="system-card"><span class="system-icon" aria-hidden="true">♧</span><h3 data-lang="es">Criaturas y ecosistemas</h3><h3 data-lang="en">Creatures and ecosystems</h3><p data-lang="es">Fauna, hábitats y una visión de criaturas con necesidades, comportamientos, entrenamiento y vínculos.</p><p data-lang="en">Wildlife, habitats and a vision of creatures with needs, behaviors, training and bonds.</p><small data-lang="es">Ecosistema y diseño en evolución</small><small data-lang="en">Ecosystem and design evolving</small></article>
+          <article class="system-card"><span class="system-icon" aria-hidden="true">⬡</span><h3 data-lang="es">Sociedades y facciones</h3><h3 data-lang="en">Societies and factions</h3><p data-lang="es">Arquitectura de asentamientos, economía, relaciones, grupos y personajes con roles diferenciados.</p><p data-lang="en">Architecture for settlements, economy, relationships, organizations and role-driven characters.</p><small data-lang="es">Simulación en integración</small><small data-lang="en">Simulation in integration</small></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="gallery">
+      <div class="shell">
+        <div class="section-top"><span class="eyebrow muted">04 / <span data-lang="es">Archivo visual</span><span data-lang="en">Visual archive</span></span>
+          <h2 class="section-heading" data-lang="es">El mundo,<br><span class="outline">sin filtros de concepto.</span></h2>
+          <h2 class="section-heading" data-lang="en">The world,<br><span class="outline">not concept art.</span></h2>
+        </div>
+        <div class="gallery-lead"><span class="eyebrow muted" data-lang="es">Capturas reales de compilaciones de desarrollo ↘</span><span class="eyebrow muted" data-lang="en">Real screenshots from development builds ↘</span>
+          <p class="paragraph" data-lang="es">Imágenes existentes del prototipo, no promesas gráficas. Pulsa una captura para verla ampliada.</p>
+          <p class="paragraph" data-lang="en">Existing prototype imagery, not a promise of final visuals. Select any image to enlarge.</p></div>
+        <div class="gallery-grid">
+          <button class="tall" data-full="assets/forest-gameplay.png" data-caption-es="Bosque y exploración · Captura del prototipo" data-caption-en="Forest and exploration · Prototype capture" aria-label="Ampliar captura del bosque"><img src="assets/forest.webp" alt="Escena real de bosque en pixel art" loading="lazy"><span class="shot-caption"><strong data-lang="es">Naturaleza emergente</strong><strong data-lang="en">Emergent nature</strong><span>01 ↗</span></span></button>
+          <button class="wide" data-full="assets/mega-island-gameplay.png" data-caption-es="Geografía y elevaciones · Captura del prototipo" data-caption-en="Geography and elevation · Prototype capture" aria-label="Ampliar captura de la isla"><img src="assets/island.webp" alt="Isla y terreno generados en el prototipo" loading="lazy"><span class="shot-caption"><strong data-lang="es">Territorios por descubrir</strong><strong data-lang="en">Territories to discover</strong><span>02 ↗</span></span></button>
+          <button class="wide" data-full="assets/vertical-world-gameplay.png" data-caption-es="Relieve y profundidad · Captura del prototipo" data-caption-en="Terrain and depth · Prototype capture" aria-label="Ampliar captura del terreno"><img src="assets/caves.webp" alt="Cavidades y relieve del prototipo" loading="lazy"><span class="shot-caption"><strong data-lang="es">Bajo la superficie</strong><strong data-lang="en">Below the surface</strong><span>03 ↗</span></span></button>
+        </div>
+        <p class="footnote" data-lang="es">* Capturas del trabajo en desarrollo. El arte final, la interfaz, los contenidos, el rendimiento y las mecánicas pueden cambiar. Las fotografías del prototipo no equivalen a una versión comercial terminada.</p>
+        <p class="footnote" data-lang="en">* Development screenshots. Final art, interface, content, performance and mechanics may change. Prototype captures do not represent a finished commercial release.</p>
+      </div>
+    </section>
+    <section class="section" id="progress-section">
+      <div class="shell">
+        <div class="section-top"><span class="eyebrow muted">05 / <span data-lang="es">Estado de desarrollo</span><span data-lang="en">Development status</span></span>
+          <h2 class="section-heading" data-lang="es">La ambición es grande.<br><span class="outline">La transparencia también.</span></h2>
+          <h2 class="section-heading" data-lang="en">Big ambitions.<br><span class="outline">Clear expectations.</span></h2>
+        </div>
+        <p class="paragraph" data-lang="es">Hay compilaciones ejecutables, módulos de juego y pruebas automatizadas. La integración y el rendimiento todavía se están resolviendo. Por ahora no anunciamos fecha de lanzamiento ni acceso público al juego.</p>
+        <p class="paragraph" data-lang="en">Executable builds, gameplay modules and automated tests exist. Integration and performance are still being worked on. There is no announced release date or public game access yet.</p>
+        <div class="milestones">
+          <article class="milestone"><span class="tag" data-lang="es">01 / En marcha</span><span class="tag" data-lang="en">01 / Underway</span><h3 data-lang="es">Base técnica y generación</h3><h3 data-lang="en">Technical foundations</h3><p data-lang="es">Construcción del terreno, regiones, biomas, renderizado y sistemas de datos. Hay pruebas de compilación y recorridos automatizados.</p><p data-lang="en">Terrain, chunks, biomes, rendering and data systems. Build checks and automated movement probes exist.</p></article>
+          <article class="milestone"><span class="tag" data-lang="es">02 / Afinando</span><span class="tag" data-lang="en">02 / Refining</span><h3 data-lang="es">Continuidad y rendimiento</h3><h3 data-lang="en">Continuity and performance</h3><p data-lang="es">Se trabaja en la carga al desplazarse, la continuidad visual, la fluidez de cuadros y las pruebas reales de guardado e interacción.</p><p data-lang="en">Work focuses on streaming during movement, visual continuity, frame pacing and real save/interaction testing.</p></article>
+          <article class="milestone"><span class="tag" data-lang="es">03 / Por completar</span><span class="tag" data-lang="en">03 / Ahead</span><h3 data-lang="es">Experiencia integral</h3><h3 data-lang="en">Complete experience</h3><p data-lang="es">Integrar bucles jugables, pulir gráficos, equilibrar sistemas y verificar el conjunto antes de comunicar una fecha.</p><p data-lang="en">Integrate complete gameplay loops, polish visuals, balance systems and validate the whole experience before announcing a date.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="studio">
+      <div class="shell">
+        <div class="section-top"><span class="eyebrow muted">06 / <span data-lang="es">El estudio</span><span data-lang="en">The studio</span></span><h2 class="section-heading notranslate" lang="en" translate="no">THE FIVEN OR<br><span class="outline">COMMUNITY.</span></h2></div>
+        <div class="studio-panel">
+          <div><p class="manifesto" data-lang="es">Somos un estudio independiente que explora lo que ocurre cuando <em>el diseño, la tecnología y la imaginación</em> trabajan juntos.</p>
+            <p class="manifesto" data-lang="en">We're an independent studio exploring what happens when <em>design, technology and imagination</em> work together.</p></div>
+          <div><p class="paragraph" data-lang="es"><Brand /> —TFOC— es la identidad detrás de nuestros proyectos. Nuestro trabajo combina desarrollo de videojuegos, programación de sistemas, diseño procedural, pruebas y experimentación visual. Construimos prototipos reales, estudiamos sus límites y volvemos a intentarlo hasta que las piezas encajan. Queremos crear experiencias con carácter propio, sin depender de fórmulas prefabricadas.</p>
+            <p class="paragraph" data-lang="en"><Brand />—TFOC—is the identity behind our projects. Our work combines game development, systems programming, procedural design, testing and visual experimentation. We build real prototypes, study their limits and iterate until the pieces fit. Our goal is to create experiences with a character of their own—not rely on ready-made formulas.</p>
+            <div class="studio-mark notranslate" lang="en" translate="no" aria-hidden="true">TFOC.</div></div>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="shell">
+        <span class="eyebrow">07 / <span data-lang="es">Hablemos</span><span data-lang="en">Let's talk</span></span>
+        <h2 data-lang="es">¿Y si hacemos<br>algo grande?</h2>
+        <h2 data-lang="en">What if we build<br>something big?</h2>
+        <div class="contact-bottom">
+          <a href="mailto:contacto@thefivenorcommunity.tech">contacto@thefivenorcommunity.tech ↗</a>
+          <p data-lang="es">Colaboraciones, consultas profesionales e ideas. Escríbenos y conversemos.</p>
+          <p data-lang="en">Collaborations, professional inquiries and ideas. Reach out and start a conversation.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

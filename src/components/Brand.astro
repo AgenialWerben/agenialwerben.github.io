@@ -1,0 +1,5 @@
+---
+interface Props { variant?: 'short' | 'long' }
+const { variant = 'long' } = Astro.props;
+---
+<span class="notranslate" lang="en" translate="no">{variant === 'long' ? 'The Fiven Or Community' : 'TFOC'}</span>
