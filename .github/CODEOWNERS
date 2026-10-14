@@ -1,0 +1,6 @@
+# Require review of sensitive changes when branch protection is enabled.
+* @AgenialWerben
+/.github/workflows/ @AgenialWerben
+/.github/dependabot.yml @AgenialWerben
+/scripts/ @AgenialWerben
+/src/ @AgenialWerben
