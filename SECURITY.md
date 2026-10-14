@@ -15,7 +15,7 @@ We ask researchers to use responsible, non-disruptive testing; avoid denial-of-s
 ## Current protections and remaining limits
 
 - Static site generation via Astro; no site-owned accounts, server APIs, or payment processor.
-- Restrictive **Content Security Policy in HTML meta tags**, no inline script or CSS, self-hosted assets and no-referrer policy.
+- Restrictive **Content Security Policy in HTML meta tags**, no unapproved inline JavaScript or CSS (the bundled Astro module is explicitly SHA-256 hashed), self-hosted assets and no-referrer policy.
 - GitHub Actions read-only repository access for builds; restricted GitHub Pages deployment token for deploy job.
 - Pinned workflow actions and dependency lock are tracked by scheduled update checks.
 - Automated static checks, dependency vulnerability auditing and source analysis are configured in CI.

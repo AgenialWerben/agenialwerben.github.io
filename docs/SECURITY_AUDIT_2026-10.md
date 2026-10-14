@@ -40,3 +40,28 @@ Follow `.github/workflows/astro.yml` and `.github/workflows/security.yml` after 
 - Review all collaborator/admin permissions, 2FA/passkeys and recovery options.
 - Verify custom-domain ownership, **Enforce HTTPS**, registrar 2FA and DNSSEC/CAA if supported.
 - Verify externally exposed files and CSP/HSTS/X-Frame-Options/etc. using an authorized browser/network.
+
+
+## Verified remediation and evidence — final recheck (2026-10-13, Honduras / 2026-10-14 UTC)
+
+**Fixed and deployed:**
+
+- Framework upgraded from Astro 5.18.2 to **Astro 7.3.8** after `npm audit` identified 1 critical, 1 high and 1 low advisory in the original dependency graph. Latest secure build's `npm audit --audit-level=high` reported **0 vulnerabilities**. This is a point-in-time result.
+- Deterministic `package-lock.json` (lockfile v3), 261 entries in patched tree; all remote registry dependencies inspected in the manifest had `integrity` values.
+- Build changed to `npm ci --ignore-scripts` for reproducible installation without dependency lifecycle scripts.
+- Restrictive HTML-meta CSP prevents arbitrary inline scripts, and `finalize-csp.mjs` allows Astro's necessary inline compiled module **only by its exact SHA-256 hash**. No `unsafe-inline` keyword is used.
+- Legacy HTML now loads local JS and CSS rather than inline source. Both legacy and Astro output pass `npm run audit:site`.
+- Browser referrer policy is `no-referrer`; public disclosure contact files are available.
+- Build/deploy GitHub Actions are commit-SHA pinned, use least-privilege token scopes and disable checkout credential persistence; CodeQL analysis and Dependabot updates are configured.
+- Verified successful Astro deployment: https://github.com/AgenialWerben/agenialwerben.github.io/actions/runs/38514959771
+- Verified successful branch-based Pages workflow at the last patched source revision: https://github.com/AgenialWerben/agenialwerben.github.io/actions/runs/38514959333
+
+**Not independently verified or not controllable with the present integration:**
+
+- GitHub `main` branch protection (the GitHub API returned 403). The rulesets endpoint returned `[]`; this does not prove that no other protection exists.
+- Actual response headers, domain HTTPS redirection, DNSSEC/CAA and domain registrar account security (domain could not be reached from the audit network).
+- Active account 2FA/passkeys, third-party access, historical commits, audit log contents or secret scanning alerts.
+- CodeQL alert inventory: successful analyzer execution does not prove its security tab contains no alerts; explicit alerts API was inaccessible.
+- HSTS, `frame-ancestors` (clickjacking), `X-Content-Type-Options` and Permissions Policy as HTTP response headers; these cannot be reliably configured inside a GitHub Pages repository.
+
+**Ongoing security maintenance:** Review Dependabot PRs rather than automatically merging breaking dependency changes; require successful checks and trusted human review before deployment; rerun this audit after large changes or at least quarterly.

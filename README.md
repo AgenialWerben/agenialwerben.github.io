@@ -20,7 +20,7 @@ Never add a global 'notranslate' meta tag, as site visitors should be able to tr
 
 ## Local development
 
-Use Node.js 22 or newer.
+Use Node.js 22.12.0 or newer.
 
     npm install
     npm run dev
