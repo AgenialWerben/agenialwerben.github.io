@@ -5,43 +5,52 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
+
 concurrency:
   group: tfoc-pages-${{ github.ref }}
   cancel-in-progress: true
+
 jobs:
   build:
-    name: Validate and build
+    name: Validate, security test and build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout sources
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '22'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Type-check
+      - name: Type-check TypeScript
         run: npm run check
-      - name: Build static website
+      - name: Build static site
         run: npm run build
-      - name: Verify published content
-        run: |
-          test -s dist/index.html
-          test -s dist/assets/forest.webp
-          test -s dist/CNAME
-          grep -q 'translate="no"' dist/index.html
-          grep -q 'The Fiven Or Community' dist/index.html
+      - name: Browser security and content regression tests
+        run: npm run audit:site
+      - name: Dependency vulnerability gate (high / critical)
+        run: npm run audit:deps
       - name: Upload Pages artifact
         if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: ./dist
+
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy GitHub Pages
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       pages: write
       id-token: write
@@ -49,6 +58,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy
+      - name: Publish verified static output
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
