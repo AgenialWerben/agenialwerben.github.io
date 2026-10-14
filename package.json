@@ -15,7 +15,7 @@
     "audit:deps": "npm audit --audit-level=high"
   },
   "dependencies": {
-    "astro": "^5.16.0"
+    "astro": "^7.3.8"
   },
   "devDependencies": {
     "typescript": "^5.9.0"
