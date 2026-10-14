@@ -1,20 +1,47 @@
-# The Fiven Or Community — website
+# TFOC — The Fiven Or Community
 
-This is a lightweight, bilingual (English/Spanish) official landing page for an independent game-development initiative.
+Official site for the independent game studio. The unreleased game title is intentionally not public on this website.
 
-## Publish on GitHub Pages
+## Front-end technology
 
-1. Create a **public** repository named `agenialwerben.github.io` under `AgenialWerben`.
-2. Upload `index.html`, `CNAME`, and `robots.txt` to the **main** branch root.
-3. Go to **Settings → Pages → Build and deployment**; set **Deploy from a branch**, branch **main**, folder **/(root)**.
-4. Set **Custom domain** to `thefivenorcommunity.tech` and save.
-5. In your current DNS provider, add these *website* records for root (`@`):
-   - A → 185.199.108.153
-   - A → 185.199.109.153
-   - A → 185.199.110.153
-   - A → 185.199.111.153
-6. Optionally configure www CNAME → `agenialwerben.github.io` and enable HTTPS once available.
+- Astro static site generation: fast, accessible semantic HTML and search-engine metadata.
+- TypeScript for language selection, mobile navigation, gallery lightbox and reading progress.
+- Reusable Astro components for Brand, Header, Footer, Lightbox and BaseLayout.
+- Responsive CSS; reduced-motion media query; no external runtime UI dependencies.
+- Spanish and English interface, with preserved language preference.
+- Original development screenshots under `assets/`, copied into `dist/assets/` during build.
 
-**Important**: Preserve the existing ImprovMX MX and SPF TXT records. Web DNS A/CNAME records are separate from incoming mail configuration.
+## Brand preservation
 
-Do not claim the site is online until DNS and Pages publication have both been verified.
+The full brand **The Fiven Or Community** must always be displayed unchanged. Use `src/components/Brand.astro` for new Astro content.
+Brand text is marked `translate="no"`, `class="notranslate"`, and `lang="en"`; the current root `index.html` has the same attributes.
+This is best-effort support for standard translation tools, not a guarantee against arbitrary browser extensions and not legal trademark protection.
+Never add a global 'notranslate' meta tag, as site visitors should be able to translate other content.
+
+## Local development
+
+Use Node.js 22 or newer.
+
+    npm install
+    npm run dev
+    npm run check
+    npm run build
+    npm run preview
+
+## Publishing Astro on GitHub Pages
+
+The pre-existing branch-deployed `index.html` remains in the root as a safe fallback while migrating.
+Github Actions builds and packages Astro on pushes to main.
+To enable the modern site in production after successful build validation:
+
+1. Go to repository **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**.
+2. In **Actions**, choose **TFOC Astro build & deploy**, then **Run workflow**.
+3. Wait for the deployment and verify `https://thefivenorcommunity.tech/` on mobile and desktop.
+
+The `public/CNAME` file preserves the custom domain. Do not change email MX/SPF DNS records. The root fallback can be removed only after the new deployment is confirmed.
+
+## Content integrity
+
+Development claims derive from the game's documents and test reports in Drive. Planned features must not be advertised as complete, and no release date has been announced.
+
+© The Fiven Or Community.
